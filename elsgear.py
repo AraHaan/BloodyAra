@@ -128,8 +128,4 @@ def parseset(string):
     elif(string.upper() == 'MQ' or string.upper() == 'MASQUERADE'):
         return 30
     else:
-<<<<<<< HEAD
         return None
-=======
-        return None
->>>>>>> 533b78ccb2ec09440080079f5b5829929a22643c
