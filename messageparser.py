@@ -163,4 +163,8 @@ def parse(message):
         response += lyying
         return response
     else:
+<<<<<<< HEAD
         return None
+=======
+        return None
+>>>>>>> 533b78ccb2ec09440080079f5b5829929a22643c

@@ -171,4 +171,8 @@ def vguilds():
         return('Latest Void Guild Topic - ' + title + ' ' + link)
         
     return 'I could not connect to the VoidEls forums.'
+<<<<<<< HEAD
     
+=======
+    
+>>>>>>> 533b78ccb2ec09440080079f5b5829929a22643c
