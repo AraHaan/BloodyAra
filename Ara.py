@@ -13,13 +13,13 @@ client.login(discord_user_email, discord_user_password)
 
 @client.event
 def on_message(message):
+    if(message.content.startswith('!market')):
+        client.send_message(message.channel,'Sorry, This Command is not ready yet.')
     if message.channel.server and message.channel.server.id == server_id:
         return
     response = messageparser.parse(message)
     if(response is not None):
         client.send_message(message.channel, response)
-        if(message.content.startswith('!market')):
-            client.send_message(message.channel,'Sorry, This Command is not ready yet.')
 
 @client.event
 def on_ready():
