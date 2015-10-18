@@ -109,6 +109,12 @@ def parse(message):
         stamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         print('looking up void Intro/Farewells on ' + stamp)
         return scrape.vintro()
+    """
+    elif(message.content.startswith('!market')):
+        stamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        print('looking up void Market topics on ' + stamp)
+        return scrape.vmarket()
+    """
     elif(message.content.startswith('!guild')):
         stamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         print('looking up void guild topics on ' + stamp)

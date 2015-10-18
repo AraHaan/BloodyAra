@@ -7,7 +7,7 @@ import messageparser
 
 discord_user_email = 'email'
 discord_user_password = 'password'
-server_id = 'server_id'
+server_id = 'SERVER_ID'
 client = discord.Client()
 client.login(discord_user_email, discord_user_password)
 
@@ -15,7 +15,7 @@ client.login(discord_user_email, discord_user_password)
 def on_message(message):
     if(message.content.startswith('!market')):
         print('Command not finnished.')
-        client.send_message(message.channel,'Sorry, This Command is not ready yet.')
+        client.send_message(message.channel,'Sorry, This Command is not working properly yet.')
     if message.channel.server and message.channel.server.id == server_id:
         print('Ignoreing commanads to this server' + server_id)
         return
