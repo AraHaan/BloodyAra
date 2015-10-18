@@ -67,6 +67,8 @@ def on_message(message):
     response = messageparser.parse(message)
     if(response is not None):
         client.send_message(message.channel, response)
+        if(message.content.startswith('!market')):
+            client.send_message(message.channel,'Sorry, This Command is not ready yet.')
     elif(message.author.id.startswith('creator_id')):
         print('is owner')
         if(message.content.startswith('!join')):
