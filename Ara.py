@@ -5,64 +5,15 @@ import datetime
 import messageparser
 import updatecheck
 
-
-client = discord.Client()
-client.login('email', 'password')
+discord_user_email = 'email'
+discord_user_password = 'password'
 server_id = 'server_id'
+client = discord.Client()
+client.login(discord_user_email, discord_user_password)
 
 @client.event
 def on_message(message):
-    if message.channel.server and message.channel.server.id == 'server_id':
-        if(message.content.startswith('!blood')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!commands')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!changelog')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!source')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        if(message.content.startswith('!beg')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        if(message.content.startswith('!goodboy')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!elwiki')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!babel')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!na')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!uk')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!void')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!events')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!promo')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!general')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!suggest')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!intro')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!guild')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!shots')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!ibset')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!google')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!gimg')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!youtube')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!roast')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!salt')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
-        elif(message.content.startswith('!lyyin')):
-            client.send_message(message.channel,'Sorry, Ignoring Commands for this Server.\n' + server_id)
+    if message.channel.server and message.channel.server.id == server_id:
         return
     response = messageparser.parse(message)
     if(response is not None):
