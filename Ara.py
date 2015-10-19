@@ -13,9 +13,13 @@ client.login(discord_user_email, discord_user_password)
 
 @client.event
 def on_message(message):
-    if(message.content.startswith('!market')):
-        print('Command not finnished.')
-        client.send_message(message.channel,'Sorry, This Command is not working properly yet.')
+    response = messageparser.parse(message)
+    if(response is not None):
+        client.send_message(message.channel, response)
+        if(message.content.startswith('!market')):
+            print('Command not finished.')
+            client.send_message(message.channel,'Sorry, This Command is not working properly yet.')
+
     elif(message.author.id.startswith(discord_user_id)):
         print('is owner')
         """
@@ -31,10 +35,6 @@ def on_message(message):
             client.send_message(message.channel, 'See ya.')
             client.leave_server(server)
         """
-    response = messageparser.parse(message)
-    if(response is not None):
-        client.send_message(message.channel, response)
-
 @client.event
 def on_ready():
     print('Logged in as')
