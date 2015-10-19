@@ -16,13 +16,16 @@ def on_message(message):
     response = messageparser.parse(message)
     if(response is not None):
         client.send_message(message.channel, response)
-        if(message.content.startswith('!market')):
-            print('Command not finished.')
-            client.send_message(message.channel,'Sorry, This Command is not working properly yet.')
 
+    elif(message.content.startswith('!market')):
+        print('Command not finished.')
+        client.send_message(message.channel,'Sorry, This Command is not working properly yet.')
+
+"""
+    #this part of code works for now but 1 command (the !market one) does not work.
     elif(message.author.id.startswith(discord_user_id)):
         print('is owner')
-        """
+
         if(message.content.startswith('!join')):
             stamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             print('joined server on ' + stamp)
@@ -34,7 +37,8 @@ def on_message(message):
             print('leaving server on ' + stamp)
             client.send_message(message.channel, 'See ya.')
             client.leave_server(server)
-        """
+"""
+        
 @client.event
 def on_ready():
     print('Logged in as')
