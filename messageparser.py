@@ -13,6 +13,7 @@ salt = u"\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u259
 lyying = u"\u02b7\u02b0\u02b8 \u1d57\u02b0\u1d49 \u0066\u1d58\u0368\u1d4f \u02b8\u00ba\u1d58 \u02e1\u02b8\u02b8\u02b8\u0027\u207f\u002c \u02b7\u02b0\u02b8 \u02b8\u00ba\u1d58 \u1d43\u02e1\u02b7\u1d43\u02b8\u02e2 \u02e1\u02b8\u02b8\u02b8\u0027\u207f\u002c \u1d50\u1d50\u1d50\u1d50\u1d50\u1d50 \u00ba\u02b0 \u1d50\u02b8 \u1d4d\u00ba\u1d48 \u02e2\u1d57\u00ba\u0070 \u0066\u1d58\u0368\u1d4f\u0027\u207f \u02e1\u02b8\u02b8\u02b8\u0027\u207f"
 changelog = "Added a few commands:\n\n**!beg**\n**!goodboy**\n**!events**\n**!changelog**\n**!source**\n**!promo**\n**!general**\n**!suggest**\n**!intro**\n**!guild**\n\n** Changes: Discovered how to make commands be ignored when you provide a Server ID that you know all of the commands would conflict with another bot.**\n\n" + version
 source = "Download the Latest Source Code at: \n" + link + "."
+halloween = "Are you having a Spooktacular day?"
 
 def parse(message):
     if(message.content.startswith('!blood')):
@@ -142,6 +143,9 @@ def parse(message):
         if (badword.has_profanity(searchterm)):
             return ('You should reconsider your words if you value your life, ' + message.author.mention())
         return ('https://www.youtube.com/results?search_query=' + urllib.parse.quote_plus(searchterm))
+    elif(message.content.startswith('!hall')):
+        print('delivering event message (10-22-15)')
+        return(halloween + message.author.mention())
     elif(message.content.startswith('!roast')):
         print('delivering roast')
         response = 'http://i.imgur.com/rSMtLIM.gif'
