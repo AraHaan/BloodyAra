@@ -8,7 +8,6 @@ import messageparser
 discord_user_email = 'email'
 discord_user_password = 'password'
 discord_user_id = 'user_id'
-server_id = message.channel.server.id
 client = discord.Client()
 client.login(discord_user_email, discord_user_password)
 
@@ -17,9 +16,9 @@ def on_message(message):
     response = messageparser.parse(message)
     if(response is not None):
         client.send_message(message.channel, response)
-    elif(message.content.startswith('!market')):
+    """elif(message.content.startswith('!market')):
         print('Command not finished.')
-        client.send_message(message.channel,'Sorry, This Command is not working properly yet.')
+        client.send_message(message.channel,'Sorry, This Command is not working properly yet.')"""
     elif(message.content.startswith('!role')):
         for mention in message.mentions:
             username = mention.mention()
@@ -46,7 +45,8 @@ def on_message(message):
             server = message.channel.server
             print('leaving server on ' + stamp)
             client.send_message(message.channel, 'See ya.')
-            if message.channel.server and message.channel.server.id == server_id:
+            print(message.channel.server.id)
+            if message.channel.server and message.channel.server.id == message.channel.server:
                 if(message.content.startswith('!leave')):
                     return
                 if(message.content.startswith('!hall')):
