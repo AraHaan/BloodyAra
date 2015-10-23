@@ -20,24 +20,30 @@ def on_message(message):
     elif(message.content.startswith('!market')):
         print('Command not finished.')
         client.send_message(message.channel,'Sorry, This Command is not working properly yet.')
-
-"""
-    #this part of code works for now but 1 command (the !market one) does not work.
-    elif(message.author.id.startswith(discord_user_id)):
-        print('is owner')
-
-        if(message.content.startswith('!join')):
-            stamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            print('joined server on ' + stamp)
-            client.accept_invite(message.content[5:].strip("0SBTUU1wZTYiaHxf"))
-            client.send_message(message.channel, 'Alright.')
-        elif(message.content.startswith('!leave')):
-            stamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            server = message.channel.server
-            print('leaving server on ' + stamp)
-            client.send_message(message.channel, 'See ya.')
-            client.leave_server(server)
-"""
+    elif(message.author.roles('Guild Master')):
+        if(message.content.startswith('!role')):
+            print('is Role ' + message.author.roles)
+            for mention in message.mentions:
+                print('mentioning ' + mention.name)
+                mention.mention()
+                """ code to add_role to a user. """
+            client.send_message(message.channel,'Sorry, No User was specified.')
+    elif(message.author.roles('Admin')):
+        if(message.content.startswith('!role')):
+            print('is Role ' + message.author.roles)
+            for mention in message.mentions:
+                print('mentioning ' + mention.name)
+                mention.mention()
+                """ code to add_role to a user. """
+            client.send_message(message.channel,'Sorry, No User was specified.')
+    elif(message.author.roles('Bots')):
+        if(message.content.startswith('!role')):
+            print('is Role ' + message.author.roles)
+            for mention in message.mentions:
+                print('mentioning ' + mention.name)
+                mention.mention()
+                """ code to add_role to a user. """
+            client.send_message(message.channel,'Sorry, No User was specified.')
         
 @client.event
 def on_ready():

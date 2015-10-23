@@ -145,7 +145,10 @@ def parse(message):
         return ('https://www.youtube.com/results?search_query=' + urllib.parse.quote_plus(searchterm))
     elif(message.content.startswith('!hall')):
         print('delivering event message (10-22-15)')
-        return(halloween + message.author.mention())
+        return(halloween)
+    elif(message.content.startswith('!lenify')):
+        msg = message.content[7:].strip()
+        return(msg)
     elif(message.content.startswith('!roast')):
         print('delivering roast')
         response = 'http://i.imgur.com/rSMtLIM.gif'

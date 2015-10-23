@@ -1,5 +1,5 @@
 beautifulsoup4==4.4.0
-discord.py==0.7.0
+discord.py==0.8.0
 feedparser==5.2.1
 requests==2.7.0
 virtualenv==13.1.2
