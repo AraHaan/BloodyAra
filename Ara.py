@@ -16,19 +16,28 @@ def on_message(message):
     response = messageparser.parse(message)
     if(response is not None):
         client.send_message(message.channel, response)
-    """elif(message.content.startswith('!market')):
+    elif(message.content.startswith('!market')):
         print('Command not finished.')
-        client.send_message(message.channel,'Sorry, This Command is not working properly yet.')"""
+        client.send_message(message.channel,'Sorry, This Command is not working properly yet.')
     elif(message.content.startswith('!role')):
-        for mention in message.mentions:
-            username = mention.mention()
-            if "!admin" in message.content:
-                userrole = 'Admin'
-            elif "!member" in message.content:
-                userrole = 'Members'
-            client.replace_roles(username, userrole)
-            client.send_message(message,channel,'User was Changed to ' + userrole + 'successfully.')
-        client.send_message(message.channel,'Sorry, No User was specified.')
+        if message.author.id == message.channel.server.owner.id:
+            for disuser in message.mentions:
+                user = discord.utils.find(lambda member: member.name == disuser.name, message.channel.server.members)
+                splitcmd = message.content.split()
+                if "!admin" in splitcmd:
+                    role = discord.utils.find(lambda role: role.name == 'Admin', message.channel.server.roles)
+                    if role is not None:
+                        client.replace_roles(user, role)
+                        client.send_message(message.channel,'Successfully added ' + user.name + ' to Members.')
+                elif "!member" in splitcmd:
+                    role = discord.utils.find(lambda role: role.name == 'Members', message.channel.server.roles)
+                    if role is not None:
+                        client.replace_roles(user, role)
+                        client.send_message(message.channel, 'Successfully added ' + user.name + ' to Members.')
+                    print('role not found')
+            client.send_message(message.channel, 'You did not specify a user to Apply Role changes to')
+        else:
+            client.send_message(message.channel, "Sorry, you don't have the correct Role to use this command")
 
     # Does not work yet. Do not mess with it unless you can help. gg
     """elif(message.author.id.startswith(discord_user_id)):
@@ -45,8 +54,8 @@ def on_message(message):
             server = message.channel.server
             print('leaving server on ' + stamp)
             client.send_message(message.channel, 'See ya.')
-            print(message.channel.server.id)
-            if message.channel.server and message.channel.server.id == message.channel.server:
+            server_id = message.channel.server.id
+            if message.channel.server and message.channel.server.id == server_id:
                 if(message.content.startswith('!leave')):
                     return
                 if(message.content.startswith('!hall')):
