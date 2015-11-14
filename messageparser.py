@@ -7,18 +7,22 @@ import scrape
 import urllib
 
 link = "https://github.com/AraHaan/BloodyAra"
-version = 'v1.3.0.22'
-commands = "Available commands:\n\n**!blood**\n**!beg**\n**!goodboy**\n**!elwiki <searchterm>**\n**!ibset <short_set_name> <character>**\n**!babel**\n**!na**\n**!uk**\n**!void**\n**!events**\n**!promo**\n**!general**\n**!suggest**\n**!intro**\n**!guild**\n**!google <searchterm>**\n**!gimg <searchterm>**\n**!youtube <searchterm>**\n**!shots**\n**!roast <optionally_mention_user>**\n**!salt <optionally_mention_user>**\n**!lyyin <optionally_mention_user>**\n**!changelog**\n**!source**"
+version = 'v1.3.0.27'
+commands = "Available commands:\n\n**!blood**\n**!beg**\n**!goodboy**\n**!elwiki <searchterm>**\n**!ibset <short_set_name> <character>**\n**!babel**\n**!na**\n**!uk**\n**!void**\n**!events**\n**!promo**\n**!general**\n**!suggest**\n**!intro**\n**!guild**\n**!google <searchterm>**\n**!gimg <searchterm>**\n**!youtube <searchterm>**\n**!shots**\n**!roast <optionally_mention_user>**\n**!salt <optionally_mention_user>**\n**!lyyin <optionally_mention_user>**\n**!changelog**\n**!source**\n**!role <!admin or !member> <mention_user>(Required) (Requires permission for Managing Roles)**\n**!prune <number of messages to remove>(Requires Manage Messages Permission)**\n**!els**\n**!smite**\n**!pso2**\n**!tera**\n**!b3**\n**!roleinfo**"
 salt = u"\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2584\u2584\u2588\u2588\u2588\u2588\u2588\u2588\u2584\n\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2584\u2584\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2584\n\u2592\u2592\u2592\u2592\u2592\u2592\u2584\u2584\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\n\u2592\u2592\u2592\u2584\u2588\u2588\u2588\u2588\u2580\u2580\u2580\u2588\u2588\u2580\u2588\u2588\u258c\u2588\u2588\u2588\u2580\u2580\u2580\u2588\u2588\u2588\u2588\n\u2592\u2592\u2590\u2580\u2588\u2588\u2588\u2588\u258c\u2580\u2588\u2588\u258c\u2580\u2590\u2588\u258c\u2588\u2588\u2588\u2588\u258c\u2588\u2588\u2588\u2588\u2588\u258c\n\u2592\u2592\u2588\u2592\u2592\u2580\u2588\u2588\u2580\u2580\u2590\u2588\u2590\u2588\u258c\u2588\u258c\u2580\u2580\u2588\u2588\u258c\u2588\u2588\u2588\u2588\u2588\u2588\n\u2592\u2592\u2588\u2592\u2592\u2592\u2592\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c\n\u2592\u2592\u2592\u258c\u2592\u2592\u2592\u2592\u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2588\u2588\u2588\u2588\u2588\u2588\u2580\n\u2592\u2592\u2592\u2580\u2584\u2593\u2593\u2593\u2592\u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2588\u2588\u2588\u2588\u2588\u2580\u2580\n\u2592\u2592\u2592\u2592\u2580\u2591\u2593\u2593\u2592\u2590\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2580\u2580\u2592\n\u2592\u2592\u2592\u2592\u2592\u2591\u2591\u2592\u2592\u2590\u2588\u2588\u2588\u2588\u2588\u2580\u2580\u2592\u2592\u2592\u2592\u2592\u2592\n\u2592\u2592\u2591\u2591\u2591\u2591\u2591\u2580\u2580\u2580\u2580\u2580\u2580\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\u2592\n\u2592\u2592\u2592\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2592\u2592"
 lyying = u"\u02b7\u02b0\u02b8 \u1d57\u02b0\u1d49 \u0066\u1d58\u0368\u1d4f \u02b8\u00ba\u1d58 \u02e1\u02b8\u02b8\u02b8\u0027\u207f\u002c \u02b7\u02b0\u02b8 \u02b8\u00ba\u1d58 \u1d43\u02e1\u02b7\u1d43\u02b8\u02e2 \u02e1\u02b8\u02b8\u02b8\u0027\u207f\u002c \u1d50\u1d50\u1d50\u1d50\u1d50\u1d50 \u00ba\u02b0 \u1d50\u02b8 \u1d4d\u00ba\u1d48 \u02e2\u1d57\u00ba\u0070 \u0066\u1d58\u0368\u1d4f\u0027\u207f \u02e1\u02b8\u02b8\u02b8\u0027\u207f"
-changelog = "Added a few commands:\n\n**!beg**\n**!goodboy**\n**!events**\n**!changelog**\n**!source**\n**!promo**\n**!general**\n**!suggest**\n**!intro**\n**!guild**\n**!lenify**\n**+ 1 other Event command**\n\n** Changes: Discovered how to make commands be ignored when you provide a Server ID that you know all of the commands would conflict with another bot.**\n\n" + version
+changelog = "Added a few commands:\n\n**!prune**\n**!els**\n**!smite**\n**!pso2**\n**!tera**\n**!b3**\n**!roleinfo**\n\n** Changes: Added a few Commands.**\n\n" + version
 source = "Download the Latest Source Code at: \n" + link + "."
 halloween = "Are you having a Spooktacular day?"
 
 def parse(message):
     if(message.content.startswith('!blood')):
         stamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        print('sending hello to ' + message.author.name + ' ' + stamp)
+        print(message.author.name)
+        print(stamp)
+        print(type(message.author.name))
+        print(type(stamp))
+        '''print('sending hello to ' + message.author.name + ' ' + stamp)'''
         return ('Is that blood I smell? ' + stamp)
     elif(message.content.startswith('!commands')):
         stamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -143,9 +147,9 @@ def parse(message):
         if (badword.has_profanity(searchterm)):
             return ('You should reconsider your words if you value your life, ' + message.author.mention())
         return ('https://www.youtube.com/results?search_query=' + urllib.parse.quote_plus(searchterm))
-    elif(message.content.startswith('!hall')):
-        print('delivering event message (10-22-15)')
-        return(halloween)
+#    elif(message.content.startswith('!hall')):
+#        print('delivering event message (10-22-15)')
+#        return(halloween)
     elif(message.content.startswith('!lenify')):
         msg = message.content[7:].strip()
         return(msg)
