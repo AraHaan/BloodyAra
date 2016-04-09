@@ -2,7 +2,7 @@
 
 ![BloodyAra](https://i.gyazo.com/87a5b318e3ddc447d8008292ac44f835.png)
 
-a small bot for Discord made in Python and deployable in Heroku. Currently in very very early alpha, use at your own risk. Commands are tailored for the Elsword community on Discord.
+ * This Repo is basically Dead and so is the bot (account was reused for DecoraterBotBeta and is now a official discord bot).
 
 Uses [discord.py](https://github.com/Rapptz/discord.py) to communicate with the Discord API and [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) to scrape Elwiki.
 
